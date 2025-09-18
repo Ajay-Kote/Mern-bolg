@@ -1,0 +1,285 @@
+.blog-feed {
+  min-height: 100vh;
+  padding: 2rem 0;
+  background: #f9fafb;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    .blog-header {
+      text-align: center;
+      margin-bottom: 3rem;
+
+      h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1f2937;
+        margin-bottom: 0.5rem;
+
+        @media (max-width: 768px) {
+          font-size: 2rem;
+        }
+      }
+
+      p {
+        font-size: 1.25rem;
+        color: #6b7280;
+      }
+    }
+
+    .blog-filters {
+      margin-bottom: 3rem;
+
+      .search-form {
+        display: flex;
+        gap: 1rem;
+        margin-bottom: 2rem;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+
+        .search-input {
+          flex: 1;
+          padding: 0.75rem 1rem;
+          border: 2px solid #e5e7eb;
+          border-radius: 8px;
+          font-size: 1rem;
+          transition: border-color 0.2s ease;
+
+          &:focus {
+            outline: none;
+            border-color: #3b82f6;
+          }
+        }
+
+        .search-button {
+          padding: 0.75rem 1.5rem;
+          background: #3b82f6;
+          color: white;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          cursor: pointer;
+          transition: background-color 0.2s ease;
+
+          &:hover {
+            background: #2563eb;
+          }
+        }
+      }
+
+      .tag-filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        justify-content: center;
+
+        .tag-filter {
+          padding: 0.5rem 1rem;
+          background: white;
+          border: 2px solid #e5e7eb;
+          border-radius: 20px;
+          font-size: 0.875rem;
+          font-weight: 500;
+          cursor: pointer;
+          transition: all 0.2s ease;
+
+          &:hover {
+            border-color: #3b82f6;
+            color: #3b82f6;
+          }
+
+          &.active {
+            background: #3b82f6;
+            border-color: #3b82f6;
+            color: white;
+          }
+        }
+      }
+    }
+
+    .blogs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .blog-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 20px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .blog-image {
+          height: 200px;
+          overflow: hidden;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+          }
+        }
+
+        &:hover .blog-image img {
+          transform: scale(1.05);
+        }
+
+        .blog-content {
+          padding: 1.5rem;
+
+          .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+
+            .author {
+              font-weight: 500;
+            }
+          }
+
+          h2 {
+            margin-bottom: 0.75rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.4;
+
+            a {
+              color: #1f2937;
+              text-decoration: none;
+              transition: color 0.2s ease;
+
+              &:hover {
+                color: #3b82f6;
+              }
+            }
+          }
+
+          .excerpt {
+            color: #6b7280;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+
+          .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+
+            .tag {
+              background: #f3f4f6;
+              color: #374151;
+              padding: 0.25rem 0.5rem;
+              border-radius: 4px;
+              font-size: 0.75rem;
+              font-weight: 500;
+            }
+          }
+
+          .blog-stats {
+            display: flex;
+            gap: 1rem;
+            font-size: 0.875rem;
+            color: #9ca3af;
+
+            span {
+              display: flex;
+              align-items: center;
+              gap: 0.25rem;
+            }
+          }
+        }
+      }
+    }
+
+    .no-blogs {
+      text-align: center;
+      padding: 3rem;
+      color: #6b7280;
+
+      h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .pagination {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 3rem;
+
+      .pagination-button {
+        padding: 0.75rem 1.5rem;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover:not(:disabled) {
+          background: #2563eb;
+        }
+
+        &:disabled {
+          background: #9ca3af;
+          cursor: not-allowed;
+        }
+      }
+
+      .pagination-info {
+        color: #6b7280;
+        font-weight: 500;
+      }
+    }
+
+    .error-message {
+      text-align: center;
+      padding: 3rem;
+      color: #ef4444;
+
+      h2 {
+        margin-bottom: 1rem;
+      }
+
+      button {
+        padding: 0.75rem 1.5rem;
+        background: #3b82f6;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        margin-top: 1rem;
+
+        &:hover {
+          background: #2563eb;
+        }
+      }
+    }
+  }
+}
