@@ -1,6 +1,5 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Navbar from './components/layout/Navbar';
 import Footer from './components/layout/Footer';
 import ProtectedRoute from './components/auth/ProtectedRoute';
@@ -16,8 +15,6 @@ import MyBlogs from './pages/MyBlogs';
 import './styles/App.scss';
 
 function App() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
-
   return (
     <div className="app">
       <Navbar />
@@ -29,23 +26,32 @@ function App() {
           <Route path="/blogs" element={<BlogFeed />} />
           <Route path="/blogs/:id" element={<SingleBlog />} />
           <Route path="/profile/:id" element={<Profile />} />
-          
+
           {/* Protected Routes */}
-          <Route path="/create-blog" element={
-            <ProtectedRoute>
-              <CreateBlog />
-            </ProtectedRoute>
-          } />
-          <Route path="/edit-blog/:id" element={
-            <ProtectedRoute>
-              <EditBlog />
-            </ProtectedRoute>
-          } />
-          <Route path="/my-blogs" element={
-            <ProtectedRoute>
-              <MyBlogs />
-            </ProtectedRoute>
-          } />
+          <Route
+            path="/create-blog"
+            element={
+              <ProtectedRoute>
+                <CreateBlog />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/edit-blog/:id"
+            element={
+              <ProtectedRoute>
+                <EditBlog />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/my-blogs"
+            element={
+              <ProtectedRoute>
+                <MyBlogs />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
       </main>
       <Footer />

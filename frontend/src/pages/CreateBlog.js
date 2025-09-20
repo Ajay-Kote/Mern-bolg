@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useForm } from 'react-hook-form';
 import { createBlog } from '../store/slices/blogSlice';
 import toast from 'react-hot-toast';
@@ -30,9 +30,11 @@ const CreateBlog = () => {
     try {
       const blogData = {
         ...data,
-        tags: data.tags ? data.tags.split(',').map(tag => tag.trim()).filter(tag => tag) : [],
+        tags: data.tags
+          ? data.tags.split(',').map(tag => tag.trim()).filter(tag => tag)
+          : [],
       };
-      
+
       const result = await dispatch(createBlog(blogData)).unwrap();
       toast.success('Blog created successfully!');
       navigate(`/blogs/${result._id}`);
@@ -52,6 +54,7 @@ const CreateBlog = () => {
         </div>
 
         <form onSubmit={handleSubmit(onSubmit)} className="blog-form">
+          {/* Title */}
           <div className="form-group">
             <label htmlFor="title">Title *</label>
             <input
@@ -72,6 +75,7 @@ const CreateBlog = () => {
             )}
           </div>
 
+          {/* Featured Image */}
           <div className="form-group">
             <label htmlFor="featuredImage">Featured Image URL</label>
             <input
@@ -83,6 +87,7 @@ const CreateBlog = () => {
             <small>Optional: Add a featured image for your blog</small>
           </div>
 
+          {/* Tags */}
           <div className="form-group">
             <label htmlFor="tags">Tags</label>
             <input
@@ -106,6 +111,7 @@ const CreateBlog = () => {
             )}
           </div>
 
+          {/* Content */}
           <div className="form-group">
             <label htmlFor="content">Content *</label>
             <textarea
@@ -127,18 +133,17 @@ const CreateBlog = () => {
             <small>You can use Markdown formatting</small>
           </div>
 
+          {/* Publish */}
           <div className="form-group checkbox-group">
             <label className="checkbox-label">
-              <input
-                type="checkbox"
-                {...register('published')}
-              />
+              <input type="checkbox" {...register('published')} />
               <span className="checkmark"></span>
               Publish immediately
             </label>
             <small>If unchecked, the blog will be saved as a draft</small>
           </div>
 
+          {/* Actions */}
           <div className="form-actions">
             <button
               type="button"
