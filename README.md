@@ -127,10 +127,11 @@ This project was developed with the help of AI tools (ChatGPT and GitHub Copilot
 - Styling with SCSS and React components
 
 **Manual Effort:**
-- Deployment of frontend (Vercel) and backend (Render/Railway)
+- Deployment of frontend (Render) and backend (Render)
 - Integration of backend API with React frontend
 - Testing and debugging the full application
 - Ensuring responsive design and proper Redux state management
+- Integration of MongoDB database (designing schemas, connecting backend, testing queries)
 
 All code was reviewed, tested, and integrated manually.
 
