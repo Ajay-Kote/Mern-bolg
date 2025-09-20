@@ -118,3 +118,19 @@ REACT_APP_API_URL=http://localhost:5000/api
 ```
 
 For production, update `REACT_APP_API_URL` to your deployed backend URL.
+## AI Assistance & Manual Effort
+
+This project was developed with the help of AI tools (ChatGPT and GitHub Copilot) for:
+- Generating code snippets and fixing bugs
+- Structuring the project (frontend + backend)
+- Writing documentation (README, deployment guides)
+- Styling with SCSS and React components
+
+**Manual Effort:**
+- Deployment of frontend (Vercel) and backend (Render/Railway)
+- Integration of backend API with React frontend
+- Testing and debugging the full application
+- Ensuring responsive design and proper Redux state management
+
+All code was reviewed, tested, and integrated manually.
+
