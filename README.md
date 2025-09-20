@@ -13,11 +13,65 @@ A full-stack blog application built with MongoDB, Express.js, React, and Node.js
 ## Project Structure
 
 ```
-mern-blog-app/
-├── backend/          # Express.js API server
-├── frontend/         # React application
-├── package.json      # Root package.json for scripts
-└── README.md
+Mern-bolg/
+├── backend/                  # Express.js + MongoDB API
+│   ├── config/
+│   │   └── db.js
+│   ├── controllers/
+│   │   └── blogController.js
+│   ├── middleware/
+│   │   ├── authMiddleware.js
+│   │   └── errorMiddleware.js
+│   ├── models/
+│   │   ├── blogModel.js
+│   │   └── userModel.js
+│   ├── routes/
+│   │   ├── blogRoutes.js
+│   │   └── userRoutes.js
+│   ├── .env.example
+│   ├── server.js
+│   └── package.json
+│
+├── frontend/                 # React + Redux + SCSS app
+│   ├── public/
+│   │   └── index.html
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── auth/
+│   │   │   │   ├── Login.js
+│   │   │   │   └── Signup.js
+│   │   │   ├── layout/
+│   │   │   │   ├── Navbar.js
+│   │   │   │   └── Footer.js
+│   │   │   └── blog/
+│   │   │       ├── BlogForm.js
+│   │   │       ├── BlogList.js
+│   │   │       └── SingleBlog.js
+│   │   ├── pages/
+│   │   │   ├── Home.js
+│   │   │   ├── BlogFeed.js
+│   │   │   └── Profile.js
+│   │   ├── redux/
+│   │   │   ├── store.js
+│   │   │   └── slices/
+│   │   │       ├── authSlice.js
+│   │   │       └── blogSlice.js
+│   │   ├── App.js
+│   │   ├── index.js
+│   │   └── styles/
+│   │       ├── main.scss
+│   │       └── components/
+│   │           └── navbar.scss
+│   ├── .env.local.example
+│   └── package.json
+│
+├── .gitignore
+├── DEPLOYMENT.md
+├── README.md
+├── package-lock.json
+├── package.json              # root scripts (install-all, dev)
+└── vercel.json               # frontend deployment config
+
 ```
 
 ## Quick Start
