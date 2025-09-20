@@ -23,9 +23,9 @@ const Footer = () => {
           <div className="footer-section">
             <h4>Connect</h4>
             <ul>
-              <li><a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a></li>
-              <li><a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
-              <li><a href="mailto:contact@example.com">Contact</a></li>
+              <li><a href="https://github.com/Ajay-Kote" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+              <li><a href="https://www.linkedin.com/in/ajay-kote-03717b290/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+              <li><a href="akajaykote@gmail.com">Contact</a></li>
             </ul>
           </div>
         </div>
